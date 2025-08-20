@@ -1,5 +1,5 @@
-var GHPATH = '/__REPO_NAME__';
-var APP_PREFIX = '__REPO_NAME___';
+var GHPATH = '/Wardle';
+var APP_PREFIX = 'Wardle_';
 var VERSION = 'version_001';
 var URLS = [    
   `${GHPATH}/`,

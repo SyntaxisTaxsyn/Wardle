@@ -1,15 +1,15 @@
 {
-  "name": "__TITLE__",
-  "short_name": "__SHORT_NAME__",
-  "description": "__DESCRIPTION__",
-  "start_url": "/__REPO_NAME__/",
-  "scope": "/__REPO_NAME__/",
+  "name": "Wardle",
+  "short_name": "Wardle",
+  "description": "Wordle Clone",
+  "start_url": "/Wardle/",
+  "scope": "/Wardle/",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "display": "standalone", 
   "icons": [
       {
-        "src": "/__REPO_NAME__/Img/AppIcon.png",
+        "src": "/Wardle/Img/AppIcon.png",
         "type": "image/png",
         "sizes": "1165x1319"
       }
