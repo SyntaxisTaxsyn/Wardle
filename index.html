@@ -153,10 +153,11 @@
   <h1>5-letter Guess Game</h1>
 
   <div class="controls">
+    <!--
     <label id="fileLabel" class="btn">
       Upload dictionary
       <input id="dictFile" type="file" accept=".txt,.csv" />
-    </label>
+    </label>-->
     <button id="resetBtn" class="btn" disabled>Reset</button>
     <div id="status">No dictionary loaded</div>
   </div>
@@ -200,6 +201,21 @@
     "ASDFGHJKL".split(""),
     ["Enter","Z","X","C","V","B","N","M","Del"]
   ];
+
+  // Automatically fetch dictionary on load
+  fetch('/Wardle/five_letter_words.txt')
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to load dictionary');
+      return response.text();
+    })
+    .then(text => {
+      parseDictionaryText(text);
+    })
+    .catch(err => {
+      console.error(err);
+      statusEl.textContent = 'Failed to load dictionary file.';
+      statusEl.style.color = '#f88';
+    });
 
   function buildGrid() {
     boardEl.innerHTML = '';
