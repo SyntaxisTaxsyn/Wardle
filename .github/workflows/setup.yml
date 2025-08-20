@@ -14,14 +14,6 @@ on:
         description: "App description"
         required: false
         default: "A Progressive Web App"
-      theme_color:
-        description: "Theme color (hex)"
-        required: false
-        default: "#2196f3"
-      background_color:
-        description: "Background color (hex)"
-        required: false
-        default: "#ffffff"
 
 permissions:
   contents: write
@@ -38,8 +30,6 @@ jobs:
           sed -i "s#__TITLE__#${{ inputs.title }}#g" $(git ls-files)
           sed -i "s#__SHORT_NAME__#${{ inputs.short_name }}#g" $(git ls-files)
           sed -i "s#__DESCRIPTION__#${{ inputs.description }}#g" $(git ls-files)
-          sed -i "s#__THEME_COLOR__#${{ inputs.theme_color }}#g" $(git ls-files)
-          sed -i "s#__BACKGROUND_COLOR__#${{ inputs.background_color }}#g" $(git ls-files)
           sed -i "s#__REPO_NAME__#$REPO_NAME#g" $(git ls-files)
 
       - name: Commit changes
